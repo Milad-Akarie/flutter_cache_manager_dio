@@ -6,13 +6,13 @@ import 'dio_http_file_service.dart';
 class DioCacheManager extends CacheManager {
   static const key = 'dioCache';
 
-  static DioCacheManager _instance;
+  static DioCacheManager? _instance;
 
   factory DioCacheManager(Dio dio) {
     if (_instance == null) {
       _instance = DioCacheManager._(dio);
     }
-    return _instance;
+    return _instance!;
   }
 
   DioCacheManager._(Dio dio)
